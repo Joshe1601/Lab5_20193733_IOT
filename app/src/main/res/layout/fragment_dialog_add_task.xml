@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DialogFragmentAddTask">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp">
+            <Button
+                style="?attr/materialIconButtonStyle"
+                android:id="@+id/iconButtonCloseDialog"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                android:contentDescription="Close Icon"
+                app:icon="@drawable/baseline_close_24" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Añadir tarea"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                style="?attr/materialIconButtonStyle"
+                android:id="@+id/iconButtonSaveTask"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:contentDescription="Notification Icon"
+                android:text="Guardar"/>
+        </LinearLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFieldTaskTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Título de la tarea">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFieldTaskDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Descripción">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha de la tarea"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:padding="8dp"/>
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Añadir recordatorio"/>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/radio_button_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <RadioButton
+                android:id="@+id/radioButtonHigh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Prioridad Alta"/>
+            <RadioButton
+                android:id="@+id/radioButtonMedium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Prioridad por defecto"/>
+            <RadioButton
+                android:id="@+id/radioButtonLow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Prioridad Baja"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+</FrameLayout>
